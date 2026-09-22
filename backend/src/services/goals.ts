@@ -26,6 +26,7 @@ export async function createGoal(name: string, targetAmount: number, targetDate?
   saveDb()
 
   const stmt = db.prepare('SELECT * FROM goals ORDER BY id DESC LIMIT 1')
+  stmt.step()
   const goal = stmt.getAsObject() as any
   stmt.free()
 

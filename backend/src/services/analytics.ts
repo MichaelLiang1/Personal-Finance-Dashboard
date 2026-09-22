@@ -38,7 +38,8 @@ export async function getSummary(fromDate?: string, toDate?: string): Promise<Su
   }
 
   let stmt = db.prepare(query)
-  stmt.bind(params)
+  if (params.length > 0) stmt.bind(params)
+  stmt.step()
   const incomeRow = stmt.getAsObject()
   stmt.free()
 
@@ -57,7 +58,8 @@ export async function getSummary(fromDate?: string, toDate?: string): Promise<Su
   }
 
   stmt = db.prepare(query)
-  stmt.bind(params)
+  if (params.length > 0) stmt.bind(params)
+  stmt.step()
   const expenseRow = stmt.getAsObject()
   stmt.free()
 
@@ -95,7 +97,7 @@ export async function getSpendingByCategory(fromDate?: string, toDate?: string):
   query += ' GROUP BY category ORDER BY total DESC'
 
   const stmt = db.prepare(query)
-  stmt.bind(params)
+  if (params.length > 0) stmt.bind(params)
 
   const rows = []
   while (stmt.step()) {
@@ -143,6 +145,7 @@ export async function getMonthlyTrends(months: number = 6): Promise<MonthTrend[]
       WHERE amount > 0 AND strftime('%Y-%m', date) = ?
     `)
     incomeStmt.bind([trend.month])
+    incomeStmt.step()
     const incomeRow = incomeStmt.getAsObject() as any
     incomeStmt.free()
 
@@ -152,6 +155,7 @@ export async function getMonthlyTrends(months: number = 6): Promise<MonthTrend[]
       WHERE amount < 0 AND strftime('%Y-%m', date) = ?
     `)
     expenseStmt.bind([trend.month])
+    expenseStmt.step()
     const expenseRow = expenseStmt.getAsObject() as any
     expenseStmt.free()
 

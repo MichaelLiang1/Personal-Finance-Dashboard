@@ -61,6 +61,7 @@ router.patch('/:id', async (req: Request, res: Response) => {
 
     const stmt = db.prepare('SELECT * FROM transactions WHERE id = ?')
     stmt.bind([parseInt(id)])
+    stmt.step()
     const row = stmt.getAsObject()
     stmt.free()
 

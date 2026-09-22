@@ -1,5 +1,5 @@
 Date,Description,Amount
-2026-05-01,Whole Foods - Groceries,75.50
+2026-05-01,Whole Foods - Groceries,-75.50
 2026-05-02,Starbucks Coffee,-5.25
 2026-05-03,Shell Gas Station,-55.00
 2026-05-05,Spotify Monthly Subscription,-12.99
@@ -12,7 +12,7 @@ Date,Description,Amount
 2026-05-20,Uber Ride,-12.50
 2026-05-22,Netflix Subscription,-15.99
 2026-05-25,Pizza Hut Restaurant,-32.40
-2026-06-01,Whole Foods - Groceries,72.10
+2026-06-01,Whole Foods - Groceries,-72.10
 2026-06-02,Starbucks Coffee,-4.50
 2026-06-03,Shell Gas Station,-60.00
 2026-06-05,Spotify Monthly Subscription,-12.99
@@ -22,7 +22,7 @@ Date,Description,Amount
 2026-06-18,Walmart Groceries,-95.80
 2026-06-20,Gym Fitness,-50.00
 2026-06-25,Sushi Restaurant,-48.90
-2026-07-01,Whole Foods - Groceries,68.40
+2026-07-01,Whole Foods - Groceries,-68.40
 2026-07-02,Starbucks Coffee,-6.75
 2026-07-03,Shell Gas Station,-58.50
 2026-07-05,Spotify Monthly Subscription,-12.99
@@ -33,7 +33,7 @@ Date,Description,Amount
 2026-07-20,Uber Ride,-15.80
 2026-07-25,Thai Restaurant,-55.30
 2026-07-28,Unusual Shopping Spree Amazon,-350.00
-2026-08-01,Whole Foods - Groceries,75.30
+2026-08-01,Whole Foods - Groceries,-75.30
 2026-08-02,Starbucks Coffee,-5.10
 2026-08-03,Shell Gas Station,-62.00
 2026-08-05,Spotify Monthly Subscription,-12.99
