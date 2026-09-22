@@ -3,6 +3,9 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import { initDb } from './db.js'
 import transactionsRouter from './routes/transactions.js'
+import analyticsRouter from './routes/analytics.js'
+import goalsRouter from './routes/goals.js'
+import aiRouter from './routes/ai.js'
 
 dotenv.config()
 
@@ -20,10 +23,9 @@ app.get('/api/health', (req, res) => {
 
 // Route modules
 app.use('/api/transactions', transactionsRouter)
-// TODO: Mount other routes
-// app.use('/api/analytics', analyticsRouter)
-// app.use('/api/goals', goalsRouter)
-// app.use('/api/ai', aiRouter)
+app.use('/api/analytics', analyticsRouter)
+app.use('/api/goals', goalsRouter)
+app.use('/api/ai', aiRouter)
 
 async function start() {
   await initDb()
